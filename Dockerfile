@@ -6,7 +6,7 @@ RUN ["/bin/sh", "-c", "apk add --update --no-cache bash ca-certificates curl git
 
 # Install Gruntwork
 RUN ["/bin/sh", "-c", "go get github.com/gruntwork-io/terratest/modules/terraform"]
-
+RUN cp -r ~/go /usr/lib/go
 RUN ["bin/sh", "-c", "mkdir -p /src"]
 
 COPY ["src", "/src/"]

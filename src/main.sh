@@ -92,7 +92,7 @@ function main {
   source ${scriptDir}/terraform_plan.sh
   source ${scriptDir}/terraform_apply.sh
   source ${scriptDir}/terraform_output.sh
-  source ${scriptDir}/go_test.sh
+  source ${scriptDir}/go.sh
 
   parseInputs
   configureCLICredentials
@@ -125,7 +125,7 @@ function main {
       ;;
     gotest)
       installTerraform
-      gotest ${*}
+      goTest ${*}
       ;;
     *)
       echo "Error: Must provide a valid value for terraform_subcommand"

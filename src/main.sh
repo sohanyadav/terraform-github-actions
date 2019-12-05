@@ -124,7 +124,6 @@ function main {
       terraformOutput ${*}
       ;;
     gotest)
-      installTerraform
       goTest ${*}
       ;;
     *)

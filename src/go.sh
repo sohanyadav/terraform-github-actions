@@ -2,20 +2,20 @@
 
 function goTest {
   # Gather the output of `teratest`.
-  echo "teratest: info: teratestializing Terraform configuration in ${tfWorkingDir}"
+  echo "teratest: info: teratest  configuration  in ${tfWorkingDir}"
   teratestOutput=$( go test -run Test -input=false ${*} 2>&1)
   teratestExitCode=${?}
 
   # Exit code of 0 indicates success. Print the output and exit.
   if [ ${teratestExitCode} -eq 0 ]; then
-    echo "teratest: info: successfully teratestialized Terraform configuration in ${tfWorkingDir}"
+    echo "teratest: info: successfully teratest  configuration in ${tfWorkingDir}"
     echo "${teratestOutput}"
     echo
     exit ${teratestExitCode}
   fi
 
   # Exit code of !0 indicates failure.
-  echo "teratest: error: failed to teratestialize Terraform configuration in ${tfWorkingDir}"
+  echo "teratest: error: failed to teratest  configuration in ${tfWorkingDir}"
   echo "${teratestOutput}"
   echo
 

@@ -3,7 +3,7 @@
 function goTest {
   # Gather the output of `teratest`.
   echo "teratest: info: teratestializing Terraform configuration in ${tfWorkingDir}"
-  teratestOutput=$(teratest -input=false ${*} 2>&1)
+  teratestOutput=$( go test -run Test -input=false ${*} 2>&1)
   teratestExitCode=${?}
 
   # Exit code of 0 indicates success. Print the output and exit.

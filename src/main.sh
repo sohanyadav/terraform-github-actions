@@ -89,6 +89,10 @@ function installGo {
   go get github.com/gruntwork-io/terratest/modules/terraform github.com/stretchr/testify/assert
 }
 
+function InsallKuguard {
+  cp ../kuguard -r $HOME/go/src
+  cd $HOME/go/src  && go install kuguard
+}
 function makeBin {
   wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh \
  | bash -s -- --version 1.13.2
@@ -143,6 +147,7 @@ function main {
       ;;
     file_upload)
       installGo
+      fileMove
       fileUpload ${*}
       ;;
     *)

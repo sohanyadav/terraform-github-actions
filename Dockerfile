@@ -1,19 +1,6 @@
-FROM alpine:3 
+FROM golang:1.13.5-alpine
 
-RUN ["/bin/sh", "-c", "apk add --update --no-cache bash ca-certificates curl git jq openssh go"]
-
-# Install Go
-RUN \
-  mkdir -p /goroot && \
-  curl https://storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz | tar xvzf - -C /goroot --strip-components=1
-
-# Set environment variables.
-ENV GOROOT /goroot
-ENV GOPATH /gopath
-ENV PATH $GOROOT/bin:$GOPATH/bin:$PATH
-
-# Define working directory.
-WORKDIR /gopath
+RUN ["/bin/sh", "-c", "apk add --update --no-cache bash ca-certificates curl git jq openssh"]
 
 # Define default command.
 

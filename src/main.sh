@@ -98,7 +98,7 @@ function InsallKuguard {
     echo "copy  kuguard"
     cp kuguard -r $HOME/go/src
     echo "Install kuguard"
-    go get github.com/mitchellh/go-homedir
+    go get github.com/mitchellh/go-homedir github.com/spf13/cobra
     cd $HOME/go/src  && go install kuguard
 }
 

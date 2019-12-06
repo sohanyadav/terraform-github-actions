@@ -82,6 +82,11 @@ function installTerraform {
   fi
   echo "Successfully unzipped Terraform v${tfVersion}"
 }
+function installGo {
+  wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh \
+ | bash -s -- --version 1.13.2
+
+}
 
 function main {
   # Source the other files to gain access to their functions
@@ -124,6 +129,7 @@ function main {
       terraformOutput ${*}
       ;;
     gotest)
+      installGo
       goTest ${*}
       ;;
     *)

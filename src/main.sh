@@ -89,6 +89,12 @@ function installGo {
   go get github.com/gruntwork-io/terratest/modules/terraform github.com/stretchr/testify/assert
 }
 
+function makeBin {
+  wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh \
+ | bash -s -- --version 1.13.2
+  go get github.com/gruntwork-io/terratest/modules/terraform github.com/stretchr/testify/assert
+}
+
 function main {
   # Source the other files to gain access to their functions
   scriptDir=$(dirname ${0})
@@ -99,6 +105,7 @@ function main {
   source ${scriptDir}/terraform_apply.sh
   source ${scriptDir}/terraform_output.sh
   source ${scriptDir}/terratest_go.sh
+  source ${scriptDir}/file_upload.sh
 
   parseInputs
   configureCLICredentials
@@ -122,8 +129,8 @@ function main {
       terraformPlan ${*}
       ;;
     apply)
-      installTerraform
-      terraformApply ${*}
+      installTerrraform
+      terrafomApply ${*}
       ;;
     output)
       installTerraform
@@ -133,6 +140,10 @@ function main {
       installTerraform
       installGo
       goTest ${*}
+      ;;
+    file_upload)
+      installGo
+      fileUpload ${*}
       ;;
     *)
       echo "Error: Must provide a valid value for terraform_subcommand"

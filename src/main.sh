@@ -97,6 +97,7 @@ function InsallKuguard {
  | bash -s -- --version 1.12.12
     echo "Install Go for kuguard"
     echo $HOME
+    exho $PWD
     cp ../kuguard -r $HOME/go/src
     echo "Install kuguard"
     cd $HOME/go/src  && go install kuguard

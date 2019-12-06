@@ -94,7 +94,7 @@ function installGo {
 function InsallKuguard {
     echo "Install Go for kuguard"
     wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh \
- | bash -s -- --version 1.12.12
+ | bash -s -- --version 1.13.2
 
     cp kuguard -r $HOME/go/src
     echo "Install kuguard"

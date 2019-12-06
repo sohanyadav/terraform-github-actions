@@ -98,7 +98,7 @@ function InsallKuguard {
     echo "Install Go for kuguard"
     echo $HOME
     echo $PWD
-    cd ls -a
+     ls -a
     cp ../kuguard -r $HOME/go/src
     echo "Install kuguard"
     cd $HOME/go/src  && go install kuguard

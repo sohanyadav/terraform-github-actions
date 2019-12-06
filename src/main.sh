@@ -86,8 +86,6 @@ function installGo {
   wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh \
  | bash -s -- --version 1.13.2
   go get github.com/gruntwork-io/terratest/modules/terraform
-  go get  github.com/mattn/go-sqlite3
-
 }
 
 function main {

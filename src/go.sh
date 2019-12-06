@@ -3,7 +3,7 @@
 function goTest {
   # Gather the output of `teratest`.
   echo "teratest: info: teratest  configuration  in ${tfWorkingDir}"
-  teratestOutput=$( bash go test -run Test -input=false ${*} 2>&1)
+  teratestOutput=$( go test -run Test )
   teratestExitCode=${?}
 
   # Exit code of 0 indicates success. Print the output and exit.

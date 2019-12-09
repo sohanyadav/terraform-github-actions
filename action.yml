@@ -3,14 +3,14 @@ description: 'Runs Terraform commands via GitHub Actions.'
 author: 'HashiCorp, Inc. Terraform Team <terraform@hashicorp.com>'
 branding:
   icon: 'terminal'
-  color: 'purple'
+  color: 'yellow'
 inputs:
   tf_actions_subcommand:
     description: 'Terraform subcommand to execute.'
-    required: true
+    required: false
   tf_actions_version:
     description: 'Terraform version to install.'
-    required: true
+    required: false
   tf_actions_cli_credentials_hostname:
     description: 'Hostname for the CLI credentials file.'
     default: 'app.terraform.io'

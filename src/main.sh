@@ -91,18 +91,17 @@ function installGo {
   go get github.com/gruntwork-io/terratest/modules/terraform github.com/stretchr/testify/assert
 }
 
-function InsallKuguard {
+
+function builBinary {
     echo "Install Go for kuguard"
     wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh \
  | bash -s -- --version 1.13.2
-    echo "copy  kuguard"
-    cp kuguard -r $HOME/go/src
-    echo "Install go  package"
-    go get github.com/mitchellh/go-homedir github.com/spf13/cobra
-    echo install kuguard
-    cd $HOME/go/src  && go install kuguard
-    echo test
-    cd $HOME/go/bin  && ls -a
+    echo  "Build binary for mac"
+    env GOOS=darwin GOACRCH=arm64 go build -o build/darwin_amd64  kuguard
+    echo "Build binary for linux"
+    env GOOS=linux GOACRCH=amd64 go build -o build/linux_amd64 kuguard
+    echo "Build binary for Windows"
+    env GOOS=windows GOACRCH=amd64 go build -o build/windows_amd64.exe
 
 }
 
@@ -154,7 +153,7 @@ function main {
       goTest ${*}
       ;;
     file_upload)
-      InsallKuguard
+      builBinary
       fileUpload ${*}
       ;;
     *)

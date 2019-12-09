@@ -14,7 +14,10 @@ function hasPrefix {
       ;;
   esac
 }
+
+#Static Version of Terraform
 INPUT_TF_ACTIONS_VERSION=0.12.13
+
 function parseInputs {
   # Required inputs
   if [ "${INPUT_TF_ACTIONS_VERSION}" != "" ]; then

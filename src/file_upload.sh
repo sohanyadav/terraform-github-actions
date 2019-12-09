@@ -46,7 +46,7 @@ function fileUpload {
     >&2 printf '\techo ::set-env name=RELEASE_TAG::"v1.0.0"\n\n'
     exit 1
   fi
-
+INPUT_GZIP=false
   # Verify that gzip: option is set to any of the allowed values
   if [ "${INPUT_GZIP}" != "true" ] && [ "${INPUT_GZIP}" != "false" ] && [ "${INPUT_GZIP}" != "folders" ]; then
     >&2 printf "\nERR: Invalid input: 'gzip' can only be not set, or one of: true, false, folders\n"

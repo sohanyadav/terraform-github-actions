@@ -104,8 +104,7 @@ function builBinary {
     env GOOS=darwin GOACRCH=amd64 go build -o build/darwin_amd64 kuguard
     echo "Build binary for Linux"
     env GOOS=linux GOACRCH=amd64 go build -o build/linux_amd64 kuguard
-    echo "Build binary for Windows"
-    env GOOS=windows GOACRCH=amd64 go build -o build/windows_amd64.exe kuguard
+
 
 }
 

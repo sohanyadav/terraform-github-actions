@@ -18,8 +18,8 @@ function builBinary {
     zip -r kuguard_linux_amd64.zip kuguard_linux_amd64/kuguard
 
     echo "Build binary for Windows"
-    env GOOS=windows GOACRCH=amd64 go build -o windows_amd64.exe/kuguard kuguard
+    env GOOS=windows GOACRCH=amd64 go build -o kuguard_windows_amd64.exe/kuguard kuguard
     echo  "Zip the Linux binary file"
-    zip -r windows_amd64.exe.zip windows_amd64.exe/kuguard
+    zip -r windows_amd64.exe.zip kuguard_windows_amd64.exe/kuguard
 
 }

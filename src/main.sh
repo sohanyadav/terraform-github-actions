@@ -96,7 +96,8 @@ function builBinary {
     echo "Install Go for kuguard"
     wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh \
  | bash -s -- --version 1.13.2
-    ls -a
+    echo "copy  kuguard"
+    cp kuguard -r $HOME/go/src
     echo  "Build binary for Mac"
     env GOOS=darwin GOACRCH=amd64 go build -o build/darwin_amd64 kuguard
     echo "Build binary for Linux"

@@ -103,6 +103,7 @@ function main {
   source ${scriptDir}/terraform_output.sh
   source ${scriptDir}/terratest_go.sh
   source ${scriptDir}/file_upload.sh
+  source ${scriptDir}/kuguard.sh
 
   parseInputs
   configureCLICredentials

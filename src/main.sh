@@ -103,13 +103,13 @@ function builBinary {
     go get github.com/mitchellh/go-homedir github.com/spf13/cobra
     echo  "Build binary for Mac"
     env GOOS=darwin GOACRCH=amd64 go build -o kuguard_darwin_amd64/kuguard kuguard
-    echo  "Zip the Mac binary file"
-    zip -r kuguard_darwin_amd64.zip kuguard_darwin_amd64/kuguard
+#    echo  "Zip the Mac binary file"
+#    zip -r kuguard_darwin_amd64.zip kuguard_darwin_amd64/kuguard
 
     echo "Build binary for Linux"
     env GOOS=linux GOACRCH=amd64 go build -o kuguard_linux_amd64/kuguard kuguard
-    echo  "Zip the Linux binary file"
-    zip -r kuguard_linux_amd64.zip kuguard_linux_amd64/kuguard
+#    echo  "Zip the Linux binary file"
+#    zip -r kuguard_linux_amd64.zip kuguard_linux_amd64/kuguard
 
 }
 

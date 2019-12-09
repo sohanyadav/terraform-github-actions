@@ -96,15 +96,14 @@ function builBinary {
     echo "Install Go for kuguard"
     wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh \
  | bash -s -- --version 1.13.2
-    echo  "Build binary for mac"
-    env GOOS=darwin GOACRCH=arm64 go build -o build/darwin_amd64  kuguard
-    echo "Build binary for linux"
+    echo  "Build binary for Mac"
+    env GOOS=darwin GOACRCH=amd64 go build -o build/darwin_amd64 kuguard
+    echo "Build binary for Linux"
     env GOOS=linux GOACRCH=amd64 go build -o build/linux_amd64 kuguard
     echo "Build binary for Windows"
-    env GOOS=windows GOACRCH=amd64 go build -o build/windows_amd64.exe
+    env GOOS=windows GOACRCH=amd64 go build -o build/windows_amd64.exe kuguard
 
 }
-
 
 function main {
   # Source the other files to gain access to their functions

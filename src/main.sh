@@ -131,7 +131,7 @@ function main {
       ;;
     apply)
       installTerraform
-      terrafomApply ${*}
+      terraformApply ${*}
       ;;
     output)
       installTerraform

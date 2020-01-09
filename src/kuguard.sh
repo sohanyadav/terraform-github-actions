@@ -13,7 +13,7 @@ function builBinary {
     zip -r kuguard_darwin_amd64.zip kuguard_darwin_amd64/kuguard
 
     echo "Build binary for Linux"
-    env GOOS=linux GOACRCH=amd64 go build -o kuguard_linux_amd64/kuguard kuguard
+    env GOOS=linux GOACRCH=arm64 go build -o kuguard_linux_arm64/kuguard kuguard
     echo  "Zip the Linux binary file"
     zip -r kuguard_linux_amd64.zip kuguard_linux_amd64/kuguard
 

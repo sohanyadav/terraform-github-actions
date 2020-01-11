@@ -14,7 +14,7 @@ function builBinary {
     echo  "Zip the Linux binary file"
    cd kuguard_linux_amd64 &&  zip  kuguard_linux_amd64.zip kuguard
     echo  "Build binary for Mac"
-    env GOOS=linux GOACRCH=amd64 go build -o kuguard_linux_amd64/kuguard kuguard
+    env GOOS=linux GOACRCH=amd64 go build -o kuguard_darwin_amd64/kuguard kuguard
     echo  "Zip the Mac binary file"
-    zip -r kuguard_darwin_amd64.zip kuguard_linux_amd64/kuguar
+    zip -r kuguard_darwin_amd64.zip kuguard_darwin_amd64/kuguard
 }

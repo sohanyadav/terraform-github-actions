@@ -143,7 +143,8 @@ function main {
       goTest ${*}
       ;;
     file_upload)
-      builBinary ${*}
+      builBinary
+      fileUpload ${*}
       ;;
     *)
       echo "Error: Must provide a valid value for terraform_subcommand"

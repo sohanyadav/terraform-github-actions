@@ -15,6 +15,6 @@ function builBinary {
     zip -r kuguard_linux_amd64.zip kuguard_linux_amd64/kuguard
     rm -rf kuguard_linux_amd64
     unzip kuguard_linux_amd64.zip
-    ./kuguard
+    cd kuguard_linux_amd64 && ./kuguard
 
 }
